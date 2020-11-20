@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<script>
+
+			function detalles(){
+
+				var url = window.location.href;
+				var id = url.substring(url.indexOf("?id=") + 4);
+				if(id == "0"){
+					document.getElementById("title").innerHTML = "Detalles de la solicitud: 1";
+					document.getElementById("nombre-solicitante").innerHTML = "Felipe Hernández";
+					document.getElementById("especialidad-solicitud").innerHTML = "Cardiología";
+					document.getElementById("sintomas-solicitante").innerHTML = "Dolor de pecho";
+					document.getElementById("archivos-solicitante").innerHTML = document.getElementById("archivos-solicitante").innerHTML + '<a href="file1.pdf" id="archivo-solicitante1" download>Archivo 1</a><br>';
+					document.getElementById("twitter-solicitante").innerHTML = "@pipehernandez927";
+					document.getElementById("email-solicitante").innerHTML = "fhernandez@clinica.cl";
+					document.getElementById("celular-solicitante").innerHTML = "-";
+					document.getElementById("region-solicitante").innerHTML = "Región Metropolitana de Santiago";
+					document.getElementById("comuna-solicitante").innerHTML = "El Bosque";
+				}
+				if(id == "1"){
+					document.getElementById("title").innerHTML = "Detalles de la solicitud: 2";
+					document.getElementById("nombre-solicitante").innerHTML = "Adriana Muñoz";
+					document.getElementById("especialidad-solicitud").innerHTML = "Pediatría";
+					document.getElementById("sintomas-solicitante").innerHTML = "Dolor de guatita";
+					document.getElementById("archivos-solicitante").innerHTML = document.getElementById("archivos-solicitante").innerHTML + '<a href="file2.txt" id="archivo-solicitante1" download>Archivo 2</a><br>';
+					document.getElementById("twitter-solicitante").innerHTML = "-";
+					document.getElementById("email-solicitante").innerHTML = "adrianam@clinica.cl";
+					document.getElementById("celular-solicitante").innerHTML = "+56 9 12345678";
+					document.getElementById("region-solicitante").innerHTML = "Región Metropolitana de Santiago";
+					document.getElementById("comuna-solicitante").innerHTML = "Ñuñoa";
+				}
+				if(id == "2"){
+					document.getElementById("title").innerHTML = "Detalles de la solicitud: 3";
+					document.getElementById("nombre-solicitante").innerHTML = "Catalina Sandoval";
+					document.getElementById("especialidad-solicitud").innerHTML = "Medicina del deporte";
+					document.getElementById("sintomas-solicitante").innerHTML = "Calor intenso en la rodilla izquierda";
+					document.getElementById("archivos-solicitante").innerHTML = "No subió archivos complementarios";
+					document.getElementById("twitter-solicitante").innerHTML = "-";
+					document.getElementById("email-solicitante").innerHTML = "catasandoval@clinica.cl";
+					document.getElementById("celular-solicitante").innerHTML = "+56 9 12348765";
+					document.getElementById("region-solicitante").innerHTML = "Valparaiso";
+					document.getElementById("comuna-solicitante").innerHTML = "Viña del Mar";
+				}
+				if(id == "3"){
+					document.getElementById("title").innerHTML = "Detalles de la solicitud: 4";
+					document.getElementById("nombre-solicitante").innerHTML = "Camilo Schneider";
+					document.getElementById("especialidad-solicitud").innerHTML = "Ginecología";
+					document.getElementById("sintomas-solicitante").innerHTML = "-";
+					document.getElementById("archivos-solicitante").innerHTML = "No subió archivos complementarios";
+					document.getElementById("twitter-solicitante").innerHTML = "@camiloschneider112";
+					document.getElementById("email-solicitante").innerHTML = "cschneider@clinica.cl";
+					document.getElementById("celular-solicitante").innerHTML = "+56 9 87654321";
+					document.getElementById("region-solicitante").innerHTML = "Región Metropolitana de Santiago";
+					document.getElementById("comuna-solicitante").innerHTML = "Huechuraba";
+				}if(id == "4"){
+					document.getElementById("title").innerHTML = "Detalles de la solicitud: 5";
+					document.getElementById("nombre-solicitante").innerHTML = "María de la Estrella";
+					document.getElementById("especialidad-solicitud").innerHTML = "Traumatología";
+					document.getElementById("sintomas-solicitante").innerHTML = "Golpe en antebrazo";
+					document.getElementById("archivos-solicitante").innerHTML = "No subió archivos complementarios";
+					document.getElementById("twitter-solicitante").innerHTML = "-";
+					document.getElementById("email-solicitante").innerHTML = "mestrella@clinica.cl";
+					document.getElementById("celular-solicitante").innerHTML = "-";
+					document.getElementById("region-solicitante").innerHTML = "Región del Biobío";
+					document.getElementById("comuna-solicitante").innerHTML = "San Carlos";
+				}
+
+			}
+
+		</script>
+
+		<title id="title">No se encontró ID</title>
+
+	</head>
+
+	<body onload="detalles()">
+
+		<a href="versolicitudesatencion.html">Volver a la lista de médicos</a><br>
+		<br>
+		Nombre:<br>
+		<label id="nombre-solicitante"></label><br><br>
+		Especialidad:<br>
+		<label id="especialidad-solicitud"></label><br><br>
+		Descripción de síntomas:<br>
+		<label id="sintomas-solicitante"></label><br><br>
+		Archivos Complementarios:<br>
+		<div id="archivos-solicitante">
+		</div><br>
+		Twitter:<br>
+		<label id="twitter-solicitante"></label><br><br>
+		E-mail:<br>
+		<label id="email-solicitante"></label><br><br>
+		Celular:<br>
+		<label id="celular-solicitante"></label><br><br>
+		Región:<br>
+		<label id="region-solicitante"></label><br><br>
+		Comuna:<br>
+		<label id="comuna-solicitante"></label><br><br>
+
+	</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="utf-8">
+		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src = "comunas.js"></script>
+		<script src = "validatesolicitudes.js"></script>
+		<script>
+
+			var file_slots = 1;
+
+			function add_new_file_slot(){
+				if(file_slots<5){
+					file_slots++;
+					previous_html = document.getElementById("file-inputs").innerHTML;
+					new_html = previous_html + '<input type="file" id="file' + file_slots + '" name="archivos-solicitante"><br>';
+					document.getElementById("file-inputs").innerHTML = new_html;
+				}
+				else{
+					alert("Máximo 5 archivos")
+				}
+			}
+
+		</script>
+
+		<title>Publicar Solicitud de Atención</title>
+
+	</head>
+
+	<body>
+
+		<a href="index.html">Volver a la página principal</a><br>
+		<br>
+
+		<form onsubmit="validate()" method="POST">
+			
+			Nombre:<br>
+			<input type="text" size="30" name="nombre-solicitante"><br>
+			
+			Especialidad:<br>
+			<select name="especialidad-solicitud">
+				<option value="0">Seleccione una Especialidad</option>
+				<option value="Cardiología">Cardiología</option>
+				<option value="Gastroenterología" >Gastroenterología</option> 
+				<option value="Endocrinología" >Endocrinología</option> 
+				<option value="Epidemiología">Epidemiología</option>
+				<option value="Geriatría">Geriatría</option>
+				<option value="Hematología">Hematología</option>
+				<option value="Infectología">Infectología</option>
+				<option value="Medicina del deporte">Medicina del deporte</option>
+				<option value="Medicina de urgencias">Medicina de urgencias</option>
+				<option value="Medicina interna">Medicina interna </option>
+				<option value="Nefrología">Nefrología</option>
+				<option value="Neumología">Neumología</option>
+				<option value="Neurología">Neurología</option>
+				<option value="Nutriología">Nutriología</option>
+				<option value="Oncología">Oncología</option>
+				<option value="Pediatría">Pediatría</option>
+				<option value="Psiquiatría">Psiquiatría</option>
+				<option value="Reumatología">Reumatología</option>
+				<option value="Toxicología">Toxicología</option>
+				<option value="Dermatología">Dermatología</option>
+				<option value="Ginecología">Ginecología</option>
+				<option value="Oftalmología">Oftalmología</option>
+				<option value="Otorrinolaringología">Otorrinolaringología</option>
+				<option value="Urología">Urología</option>
+				<option value="Traumatología">Traumatología</option>
+			</select><br>
+
+			Descripción de Síntomas:<br>
+			<textarea rows="8" cols="40" name="sintomas-solicitante"></textarea><br>
+
+			Archivos Complementarios:<br>
+			<div id="file-inputs">
+				<input type="file" id="file1" name="archivos-solicitante"><br>
+			</div>
+			<button id="nueva-archivo" type="button" onclick="add_new_file_slot()">Agregar otro archivo</button><br>
+
+			Twitter:<br>
+			<input type="text" size="80" name="twitter-solicitante"><br>
+
+			Email:<br>
+			<input type="text" size="80" name="email-solicitante"><br>
+
+			Celular:<br>
+			<input type="text" size="15" name="celular-solicitante"><br>
+
+			Región:<br>
+			<select id="regiones" name="region-solicitante"></select><br>
+
+			Comuna:<br>
+			<select id="comunas" name="comuna-solicitante"></select><br>
+
+			<input type="submit" name="submit_datos_medicos">
+
+		</form>
+		
+	</body>
+
+</html>

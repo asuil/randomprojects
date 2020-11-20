@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<script>
+
+			function detalles(){
+
+				var url = window.location.href;
+				var id = url.substring(url.indexOf("?id=") + 4);
+				if(id == "felipe"){
+					document.getElementById("title").innerHTML = "Detalles de Felpe Hernández";
+					document.getElementById("region-medico").innerHTML = "Región Metropolitana de Santiago";
+					document.getElementById("comuna-medico").innerHTML = "El Bosque";
+					document.getElementById("nombre-medico").innerHTML = "Felipe Hernández";
+					document.getElementById("experiencia-medico").innerHTML = "20 años trabajando en esta clínica";
+					document.getElementById("especialidades-medico").innerHTML = "Cardiología <br> Endocrinología";
+
+					// with db => for filename found in foto-medico add new photo
+					document.getElementById("fotos-medico").innerHTML = document.getElementById("fotos-medico").innerHTML + '<img src="1.png" width="320" height="240" id="foto-felipe-1" onclick="resize(\'foto-felipe-1\')">';
+
+					document.getElementById("twitter-medico").innerHTML = "@pipehernandez927";
+					document.getElementById("email-medico").innerHTML = "fhernandez@clinica.cl";
+					document.getElementById("celular-medico").innerHTML = "-";
+
+				}
+				else if(id == "adriana"){
+					document.getElementById("title").innerHTML = "Detalles de Adriana Muñoz";
+					document.getElementById("region-medico").innerHTML = "Región Metropolitana de Santiago";
+					document.getElementById("comuna-medico").innerHTML = "Ñuñoa";
+					document.getElementById("nombre-medico").innerHTML = "Adriana Muñoz";
+					document.getElementById("experiencia-medico").innerHTML = "15 años trabajando en esta clínica, y 5 en otra";
+					document.getElementById("especialidades-medico").innerHTML = "Pediatría <br> Psiquiatría";
+
+					document.getElementById("fotos-medico").innerHTML = document.getElementById("fotos-medico").innerHTML + '<img src="2.png" width="320" height="240" id="foto-adriana-1" onclick="resize(\'foto-adriana-1\')">';
+					document.getElementById("fotos-medico").innerHTML = document.getElementById("fotos-medico").innerHTML + '<img src="3.png" width="320" height="240" id="foto-adriana-2" onclick="resize(\'foto-adriana-2\')">';
+
+					document.getElementById("twitter-medico").innerHTML = "-";
+					document.getElementById("email-medico").innerHTML = "adrianam@clinica.cl";
+					document.getElementById("celular-medico").innerHTML = "+56 9 12345678";
+				}
+				else if(id == "catalina"){
+					document.getElementById("title").innerHTML = "Detalles de Catalina Sandoval";
+					document.getElementById("region-medico").innerHTML = "Valparaiso";
+					document.getElementById("comuna-medico").innerHTML = "Viña del Mar";
+					document.getElementById("nombre-medico").innerHTML = "Catalina Sandoval";
+					document.getElementById("experiencia-medico").innerHTML = "10 años trabajando en esta clínica";
+					document.getElementById("especialidades-medico").innerHTML = "Medicina del deporte";
+
+					document.getElementById("fotos-medico").innerHTML = document.getElementById("fotos-medico").innerHTML + '<img src="4.png" width="320" height="240" id="foto-catalina-1" onclick="resize(\'foto-catalina-1\')">';
+
+					document.getElementById("twitter-medico").innerHTML = "-";
+					document.getElementById("email-medico").innerHTML = "catasandoval@clinica.cl";
+					document.getElementById("celular-medico").innerHTML = "+56 9 12348765";
+				}
+				else if(id == "camilo"){
+					document.getElementById("title").innerHTML = "Detalles de Camilo Schneider";
+					document.getElementById("region-medico").innerHTML = "Región Metropolitana de Santiago";
+					document.getElementById("comuna-medico").innerHTML = "Huechuraba";
+					document.getElementById("nombre-medico").innerHTML = "Camilo Schneider";
+					document.getElementById("experiencia-medico").innerHTML = "6 años trabajando en esta clínica";
+					document.getElementById("especialidades-medico").innerHTML = "Ginecología <br> Urología";
+
+					document.getElementById("fotos-medico").innerHTML = document.getElementById("fotos-medico").innerHTML + '<img src="5.png" width="320" height="240" id="foto-camilo-1" onclick="resize(\'foto-camilo-1\')">';
+
+					document.getElementById("twitter-medico").innerHTML = "@camiloschneider112";
+					document.getElementById("email-medico").innerHTML = "cschneider@clinica.cl";
+					document.getElementById("celular-medico").innerHTML = "+56 9 87651234";
+				}
+				else if(id == "maria"){
+					document.getElementById("title").innerHTML = "Detalles de María de la Estrella";
+					document.getElementById("region-medico").innerHTML = "Región del Biobío";
+					document.getElementById("comuna-medico").innerHTML = "San Carlos";
+					document.getElementById("nombre-medico").innerHTML = "María de la Estrella";
+					document.getElementById("experiencia-medico").innerHTML = "30 años trabajando en esta clínica";
+					document.getElementById("especialidades-medico").innerHTML = "Traumatología <br> Neumología <br> Endocrinología";
+
+					document.getElementById("fotos-medico").innerHTML = document.getElementById("fotos-medico").innerHTML + '<img src="6.webp" width="320" height="240" id="foto-maria-1" onclick="resize(\'foto-maria-1\')">';
+
+					document.getElementById("twitter-medico").innerHTML = "-";
+					document.getElementById("email-medico").innerHTML = "mestrella@clinica.cl";
+					document.getElementById("celular-medico").innerHTML = "-";
+				}
+			}
+
+			function resize(id){
+				// could resize the others so only one can be big at a time
+				if(document.getElementById(id).width == 320){
+					document.getElementById(id).width = 800;
+					document.getElementById(id).height = 600;
+				}
+				else{
+					document.getElementById(id).width = 320;
+					document.getElementById(id).height = 240;
+				}
+			}
+
+		</script>
+
+		<title id="title">No se encontró ID</title>
+
+	</head>
+
+	<body onload="detalles()">
+
+		<a href="vermedicos.html">Volver a la lista de médicos</a><br>
+		<br>
+		Región:<br>
+		<label id="region-medico"></label><br><br>
+		Comuna:<br>
+		<label id="comuna-medico"></label><br><br>
+		Nombre:<br>
+		<label id="nombre-medico"></label><br><br>
+		Experiencia:<br>
+		<label id="experiencia-medico"></label><br><br>
+		Especialidades:<br>
+		<label id="especialidades-medico"></label><br><br>
+		Foto:<br>
+		<div id="fotos-medico">
+		</div><br><br>
+		Twitter:<br>
+		<label id="twitter-medico"></label><br><br>
+		E-mail:<br>
+		<label id="email-medico"></label><br><br>
+		Celular:<br>
+		<label id="celular-medico"></label>
+
+	</body>
+
+</html>

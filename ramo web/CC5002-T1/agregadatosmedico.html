@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="utf-8">
+		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src = "comunas.js"></script>
+		<script src = "validatemedicos.js"></script>
+		<script>
+
+			var photo_slots = 1;
+
+			function add_new_photo_slot(){
+				if(photo_slots<5){
+					photo_slots++;
+					previous_html = document.getElementById("image-inputs").innerHTML;
+					new_html = previous_html + '<input type="file" id="img' + photo_slots + '" name="foto-medico" accept="image/*"><br>';
+					document.getElementById("image-inputs").innerHTML = new_html;
+				}
+				else{
+					alert("Máximo 5 fotos")
+				}
+			}
+
+		</script>
+
+		<title>Agrega Datos de Médico</title>
+
+	</head>
+
+	<body>
+
+		<a href="index.html">Volver a la página principal</a><br>
+		<br>
+
+		<form onsubmit="validate()" method="POST">
+
+			Región:<br>
+			<select id="regiones" name="region-medico"></select><br>
+
+			Comuna:<br>
+			<select id="comunas" name="comuna-medico"></select><br>
+
+			Nombre:<br>
+			<input type="text" size="30" name="nombre-medico"><br>
+
+			Experiencia:<br>
+			<textarea rows="8" cols="40" name="experiencia-medico"></textarea><br>
+
+			Especialidades:<br>
+			<select id="especialidades-medico" name="especialidades-medico" multiple>
+				<option value="Cardiología">Cardiología</option>
+				<option value="Gastroenterología" >Gastroenterología</option> 
+				<option value="Endocrinología" >Endocrinología</option> 
+				<option value="Epidemiología">Epidemiología</option>
+				<option value="Geriatría">Geriatría</option>
+				<option value="Hematología">Hematología</option>
+				<option value="Infectología">Infectología</option>
+				<option value="Medicina del deporte">Medicina del deporte</option>
+				<option value="Medicina de urgencias">Medicina de urgencias</option>
+				<option value="Medicina interna">Medicina interna </option>
+				<option value="Nefrología">Nefrología</option>
+				<option value="Neumología">Neumología</option>
+				<option value="Neurología">Neurología</option>
+				<option value="Nutriología">Nutriología</option>
+				<option value="Oncología">Oncología</option>
+				<option value="Pediatría">Pediatría</option>
+				<option value="Psiquiatría">Psiquiatría</option>
+				<option value="Reumatología">Reumatología</option>
+				<option value="Toxicología">Toxicología</option>
+				<option value="Dermatología">Dermatología</option>
+				<option value="Ginecología">Ginecología</option>
+				<option value="Oftalmología">Oftalmología</option>
+				<option value="Otorrinolaringología">Otorrinolaringología</option>
+				<option value="Urología">Urología</option>
+				<option value="Traumatología">Traumatología</option>
+			</select><br>
+
+			Foto:<br>
+			<div id="image-inputs">
+				<input type="file" id="img1" name="foto-medico" accept="image/*"><br>
+			</div>
+			<button id="nueva-foto" type="button" onclick="add_new_photo_slot()">Agregar otra foto</button><br>
+
+			Twitter:<br>
+			<input type="text" size="80" name="twitter-medico"><br>
+
+			Email:<br>
+			<input type="text" size="80" name="email-medico"><br>
+
+			Celular:<br>
+			<input type="text" size="15" name="celular-medico"><br>
+			
+			<input type="submit" name="submit_datos_medicos">
+
+		</form>
+		
+	</body>
+
+</html>

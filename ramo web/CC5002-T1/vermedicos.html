@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<style>
+			table, th, td {
+	  			border: 1px solid black;
+			}
+		</style>
+
+		<script>
+			function get_details(id){
+				window.location.replace("detallemedico.html?id="+id);
+			}
+		</script>
+
+		<title>Ver Médicos</title>
+
+	</head>
+
+	<body>
+
+		<a href="index.html">Volver a la página principal</a><br>
+			<br>
+
+		<table>
+
+			<tr>
+				<th>Nombre Médico</th>
+				<th>Especialidades</th>
+				<th>Comuna</th>
+				<th>Datos Contacto</th>
+			</tr>
+
+			<tr onclick="get_details('felipe')">
+				<td>Felipe Hernández</td>
+				<td>Cardiología <br> Endocrinología</td>
+				<td>El Bosque</td>
+				<td>email: fhernandez@clinica.cl <br> twitter: @pipehernandez927</td>
+			</tr>
+
+			<tr onclick="get_details('adriana')">
+				<td>Adriana Muñoz</td>
+				<td>Pediatría <br> Psiquiatría</td>
+				<td>Ñuñoa</td>
+				<td>email: adrianam@clinica.cl <br> teléfono: +56 9 12345678</td>
+			</tr>
+
+			<tr onclick="get_details('catalina')">
+				<td>Catalina Sandoval</td>
+				<td>Medicina del deporte</td>
+				<td>Viña del Mar</td>
+				<td>email: catasandoval@clinica.cl <br> teléfono: +56 9 12348765</td>
+			</tr>
+
+			<tr onclick="get_details('camilo')">
+				<td>Camilo Schneider</td>
+				<td>Ginecología <br> Urología</td>
+				<td>Huechuraba</td>
+				<td>email: cschneider@clinica.cl <br> twitter: @camiloschneider112 <br> teléfono: +56 9 87654321</td>
+			</tr>
+
+			<tr onclick="get_details('maria')">
+				<td>María de la Estrella</td>
+				<td>Traumatología <br> Neumología <br> Endocrinología</td>
+				<td>San Carlos</td>
+				<td>email: mestrella@clinica.cl</td>
+			</tr>
+
+		</table>
+		
+	</body>
+
+</html>
